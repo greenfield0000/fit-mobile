@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:id="@+id/i_clients"
+        android:checked="true"
+        android:icon="@drawable/clients"
+        android:title="Клиенты"
+        android:textColor="@color/white"/>
+
+    <item
+        android:id="@+id/i_shedule"
+        android:icon="@drawable/shedule"
+        android:title="Расписание"
+        android:textColor="@color/white"/>
+
+    <item
+        android:id="@+id/i_exercises"
+        android:icon="@drawable/executions"
+        android:title="Упражнения"
+        android:textColor="@color/white"/>
+
+    <item
+        android:id="@+id/i_timer"
+        android:icon="@drawable/timer"
+        android:title="Таймер"
+        android:textColor="@color/white"
+
+        />
+</menu>
