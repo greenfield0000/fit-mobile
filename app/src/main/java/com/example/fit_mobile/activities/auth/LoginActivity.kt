@@ -1,7 +1,8 @@
-package com.example.fit_mobile
+package com.example.fit_mobile.activities.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.fit_mobile.R
 
 class LoginActivity : AppCompatActivity() {
 
