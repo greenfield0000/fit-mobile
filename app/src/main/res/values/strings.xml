@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">fit-mobile</string>
+    <string name="client_activity_header">Клиент</string>
+    <string name="client_second_name">Фамилия</string>
+    <string name="client_name">Имя</string>
+    <string name="client_surname">Отчество</string>
+    <string name="client_birthday">Дата рождения</string>
+    <string name="client_mobile_phone">Мобильный телефон</string>
+    <string name="client_email_label">Email</string>
+    <string name="example_email_com_hint">example@email.com</string>
+    <string name="example_phone_hint">+7 (000) 000 - 00 - 00</string>
 </resources>
