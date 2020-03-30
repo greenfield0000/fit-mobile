@@ -8,9 +8,12 @@ import android.os.Bundle
 import android.text.InputType
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TabHost
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_mobile.R
+import com.example.fit_mobile.model.DropDownItem
 import kotlinx.android.synthetic.main.activity_client_info.*
 import java.util.*
 
@@ -40,6 +43,66 @@ class ClientInfoActivity : AppCompatActivity() {
     private fun registryListenerActivity() {
         // все что связано с дата пикером "Дата рождения"
         registryBirthDayDatePicker()
+        // уровень
+        registryDropDownLevel()
+        // цель
+        registryDropDownTarget()
+        // пол
+        registryDropDownClientSex()
+    }
+
+    /**
+     * Настройка дроп дауна "Пол"
+     */
+    private fun registryDropDownClientSex() {
+        val dropDownItemList = listOf(
+            DropDownItem(id = 0, name = "Мужской", sysName = "MALE").name,
+            DropDownItem(id = 1, name = "Женский", sysName = "FEMALE").name
+        )
+        addDropDownToSpinner(client_sex, dropDownItemList)
+    }
+
+    /**
+     * Настройка дроп дауна "Уровень"
+     */
+    private fun registryDropDownTarget() {
+        val dropDownItemList = listOf(
+            DropDownItem(id = 0, name = "Сброс веса", sysName = "DROP_WEIGHT").name,
+            DropDownItem(id = 1, name = "ОФП", sysName = "OFP").name,
+            DropDownItem(
+                id = 2,
+                name = "Увеличить мышечную массу",
+                sysName = "INCREASE_MUSCLE_MASS"
+            ).name,
+            DropDownItem(id = 3, name = "Увеличить выносливость", sysName = "INCREASE_STAMINA").name
+        )
+        addDropDownToSpinner(client_target, dropDownItemList)
+    }
+
+    /**
+     * Настройка дроп дауна "Уровень"
+     */
+    private fun registryDropDownLevel() {
+        val dropDownItemList = listOf(
+            DropDownItem(id = 0, name = "Начальный", sysName = "BEGINNER").name,
+            DropDownItem(id = 1, name = "Средний", sysName = "MIDDLE").name,
+            DropDownItem(id = 2, name = "Прогрессивный", sysName = "PROGRESSIVE").name
+        )
+        addDropDownToSpinner(client_level, dropDownItemList)
+    }
+
+    /**
+     * Регистрация списка значений в спиннер для текущей активити
+     */
+    private fun addDropDownToSpinner(
+        spinner: Spinner,
+        dropDownItemList: List<Any>
+    ) {
+        spinner.adapter = ArrayAdapter(
+            this@ClientInfoActivity,
+            android.R.layout.simple_spinner_dropdown_item,
+            dropDownItemList
+        )
     }
 
     /**
@@ -48,7 +111,7 @@ class ClientInfoActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun registryBirthDayDatePicker() {
         client_birthdaty_text.inputType = InputType.TYPE_NULL
-        client_birthdaty_text.setTextIsSelectable(true);
+//        client_birthdaty_text.setTextIsSelectable(true);
 
         val calendar: Calendar = Calendar.getInstance()
         val day: Int = calendar.get(Calendar.DAY_OF_MONTH)
@@ -60,7 +123,7 @@ class ClientInfoActivity : AppCompatActivity() {
             this,
             OnDateSetListener { it, year, monthOfYear, dayOfMonth ->
                 client_birthdaty_text.setText(
-                    dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year
+                    dayOfMonth.toString() + "/" + (monthOfYear.toString() + 1) + "/" + year.toString()
                 )
             },
             year,
@@ -79,8 +142,7 @@ class ClientInfoActivity : AppCompatActivity() {
         }
 
         client_birthdaty_text.setOnClickListener {
-            val currentFocus = picker.currentFocus
-            if (!picker.isShowing && currentFocus != null && currentFocus.isFocused)
+            if (!picker.isShowing)
                 picker.show()
         }
     }

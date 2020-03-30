@@ -9,4 +9,16 @@
     <string name="client_email_label">Email</string>
     <string name="example_email_com_hint">example@email.com</string>
     <string name="example_phone_hint">+7 (000) 000 - 00 - 00</string>
+    <string name="city_label">Город</string>
+    <string name="street_build_place">Улица, дом, квартира</string>
+    <string name="index">Индекс</string>
+    <string name="client_level">Уровень</string>
+    <string name="client_target">Цель</string>
+    <string name="client_sex">Пол</string>
+
+    <string-array name="levelItems">
+        <item>Начальный</item>
+        <item>Средний</item>
+        <item>Прогрессивный</item>
+    </string-array>
 </resources>

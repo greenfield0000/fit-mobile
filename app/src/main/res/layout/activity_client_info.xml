@@ -180,6 +180,110 @@
                             android:inputType="textEmailAddress"
                             android:autofillHints="@string/example_email_com_hint" />
 
+                        <!-- Город -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/city_label" />
+
+                        <EditText
+                            android:id="@+id/client_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <!-- Улица, дом, кв. -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/street_build_place" />
+
+                        <EditText
+                            android:id="@+id/street_build_place"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <!-- Индекс -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/index" />
+
+                        <EditText
+                            android:id="@+id/index"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <!-- Уровень -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/client_level" />
+
+                        <Spinner
+                            android:id="@+id/client_level"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <!-- Цель -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/client_target" />
+
+                        <Spinner
+                            android:id="@+id/client_target"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <!-- Пол -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/client_sex" />
+
+                        <Spinner
+                            android:id="@+id/client_sex"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+
+
+
                     </LinearLayout>
                 </ScrollView>
 
