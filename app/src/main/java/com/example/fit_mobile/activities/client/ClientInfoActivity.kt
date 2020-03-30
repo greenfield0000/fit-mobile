@@ -4,14 +4,17 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TabHost
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_mobile.MainActivity
 import com.example.fit_mobile.R
 import com.example.fit_mobile.model.DropDownItem
 import kotlinx.android.synthetic.main.activity_client_info.*
@@ -25,14 +28,15 @@ class ClientInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_client_info)
-        tabhost.setup()
+        back_arrow.setOnClickListener {
+            Log.e("ClientInfoActivity", "button back clicked!!!")
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
-        // Регистрация табов
+        tabhost.setup()
         registryNewTabWithTabHost(tabhost, "tag1", R.id.tab1, "Информация")
         registryNewTabWithTabHost(tabhost, "tag2", R.id.tab2, "Тренировка")
         registryNewTabWithTabHost(tabhost, "tag3", R.id.tab3, "Питание")
-
-
         // Регистрация обработчиков формы
         registryListenerActivity()
     }
